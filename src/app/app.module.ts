@@ -11,16 +11,22 @@ import {
   MatInputModule,
   MatTableModule, } from '@angular/material';
 
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
+
 import { RegistrationComponent } from './components/registration/registration.component';
+
 import { TeamMessagingService } from './services/team-messaging.service';
 import { TeamMessagingIndexComponent } from './components/team-messaging/team-messaging-index/team-messaging-index.component';
 import { TeamMessagingCreateComponent } from './components/team-messaging/team-messaging-create/team-messaging-create.component';
 import { TeamMessagingDetailComponent } from './components/team-messaging/team-messaging-detail/team-messaging-detail.component';
 import { TeamMessagingUpdateComponent } from './components/team-messaging/team-messaging-update/team-messaging-update.component';
 import { TeamMessagingDeleteComponent } from './components/team-messaging/team-messaging-delete/team-messaging-delete.component';
+
 import { TeamCreateComponent } from './components/team/team-create/team-create.component';
 import { TeamDetailComponent } from './components/team/team-detail/team-detail.component';
 import { TeamDeleteComponent } from './components/team/team-delete/team-delete.component';
@@ -48,6 +54,28 @@ const routes = [
   { path: '**', component: RegistrationComponent }, 
 ];
 
+import { LoginComponent } from './components/login/login.component';
+
+const routes = [
+  {path: 'register', component: RegistrationComponent}, 
+  {path: 'login', component: LoginComponent },
+  { path: 'events', component: EventIndexComponent },
+  { path: '**', component: RegistrationComponent }
+];
+
+
+import { AuthService } from './services/auth.service';
+import { EventService } from './services/event.service';
+import { ProfileService } from 'src/app/services/profile.service';
+import { EventIndexComponent } from './components/event/event-index/event-index.component';
+import { ProfileIndexComponent } from './components/profile/profile-index/profile-index.component';
+import { ProfileCreateComponent } from './components/profile/profile-create/profile-create.component';
+import { ProfileDetailComponent } from './components/profile/profile-detail/profile-detail.component';
+import { ProfileEditComponent } from './components/profile/profile-edit/profile-edit.component';
+import { GetProfileComponent } from './components/profile/get-profile/get-profile.component';
+import { GetProfileByTeamComponent } from './components/profile/get-profile-by-team/get-profile-by-team.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,6 +91,8 @@ const routes = [
     TeamDeleteComponent,
     TeamIndexComponent,
     TeamUpdateComponent
+    LoginComponent,
+    EventIndexComponent
   ],
   imports: [
     BrowserModule,
@@ -76,10 +106,20 @@ const routes = [
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    ProfileIndexComponent,
+    ProfileCreateComponent,
+    ProfileDetailComponent,
+    ProfileEditComponent,
+    GetProfileComponent,
+    GetProfileByTeamComponent,
   ],
-  providers: [
-    TeamMessagingService
-  ],
+  
+  
+
+  providers: [AuthService, EventService, TeamMessagingService, ProfileService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
