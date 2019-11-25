@@ -29,6 +29,12 @@ const routes = [
 import { AuthService } from './services/auth.service';
 import { EventService } from './services/event.service';
 import { EventIndexComponent } from './components/event/event-index/event-index.component';
+import { ProfileIndexComponent } from './components/profile/profile-index/profile-index.component';
+import { ProfileCreateComponent } from './components/profile/profile-create/profile-create.component';
+import { ProfileDetailComponent } from './components/profile/profile-detail/profile-detail.component';
+import { ProfileEditComponent } from './components/profile/profile-edit/profile-edit.component';
+import { GetProfileComponent } from './components/profile/get-profile/get-profile.component';
+import { GetProfileByTeamComponent } from './components/profile/get-profile-by-team/get-profile-by-team.component';
 
 
 @NgModule({
@@ -51,8 +57,14 @@ import { EventIndexComponent } from './components/event/event-index/event-index.
     MatSelectModule,
     RouterModule.forRoot(routes),
     HttpClientModule
-   
+    ProfileIndexComponent,
+    ProfileCreateComponent,
+    ProfileDetailComponent,
+    ProfileEditComponent,
+    GetProfileComponent,
+    GetProfileByTeamComponent,
   ],
+
   providers: [AuthService, EventService],
   bootstrap: [AppComponent]
 })
