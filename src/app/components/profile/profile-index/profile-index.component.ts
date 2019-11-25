@@ -13,7 +13,7 @@ export class ProfileIndexComponent implements OnInit {
 
   ngOnInit() {
     // this.profileService.GetProfile(UserID).subscribe((profile: Profile[])=>{
-      
+      // bleh
     // });
   }
 }
