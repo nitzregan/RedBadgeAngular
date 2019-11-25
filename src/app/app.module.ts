@@ -16,19 +16,28 @@ import {
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { LoginComponent } from './components/login/login.component';
 
-const routes = [{path: 'register', component: RegistrationComponent}, {path: 'login', component: LoginComponent },{ path: '**', component: RegistrationComponent }];
+const routes = [
+  {path: 'register', component: RegistrationComponent}, 
+  {path: 'login', component: LoginComponent },
+  { path: 'events', component: EventIndexComponent },
+  { path: '**', component: RegistrationComponent }
+];
 
 
 import { AuthService } from './services/auth.service';
-import { LoginComponent } from './components/login/login.component';
+import { EventService } from './services/event.service';
+import { EventIndexComponent } from './components/event/event-index/event-index.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    EventIndexComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +53,7 @@ import { LoginComponent } from './components/login/login.component';
     HttpClientModule
    
   ],
-  providers: [AuthService],
+  providers: [AuthService, EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
