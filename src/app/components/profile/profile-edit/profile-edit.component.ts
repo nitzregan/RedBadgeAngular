@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileService } from 'src/app/services/profile.service';
+import { Profile } from 'src/app/models/Profile';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-profile-edit',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileEditComponent implements OnInit {
 
-  constructor() { }
+  profileEditForm: FormGroup;
+
+  constructor(private form: FormBuilder , private profileService: ProfileService) { 
+    this.createForm();
+  }
 
   ngOnInit() {
+  }
+
+  createForm() {
+    this.profileEditForm = this.form.group({
+      FirstName: new FormControl,
+      LastName: new FormControl,
+      Birthday: new FormControl,
+      Email: new FormControl,
+      PhoneNumber: new FormControl,
+      OtherInfo: new FormControl,
+    })
+  }
+
+  onSubmit() {
+    this.profileService.UpdateProfile(this.profileEditForm.value);
   }
 
 }

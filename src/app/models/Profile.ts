@@ -16,3 +16,17 @@ export interface Profile {
     Comments: Array<Comments>;
     CreatedUtc?: Date;
 }
+
+// UserID
+// ProfileID
+// FirstName
+// LastName
+// Birthday
+// Email
+// PhoneNumber
+// OtherInfo
+// AthleteUsername
+// ParentUsername
+// MyTeams
+// Comments
+// CreatedUtc
