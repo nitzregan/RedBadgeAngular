@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { 
-  MatToolbarModule, 
+  MatToolbarModule,
   MatButtonModule, 
   MatFormFieldModule, 
   MatInputModule,
@@ -25,7 +25,7 @@ import { ProfileEditComponent } from './components/profile/profile-edit/profile-
 import { GetProfileComponent } from './components/profile/get-profile/get-profile.component';
 import { GetProfileByTeamComponent } from './components/profile/get-profile-by-team/get-profile-by-team.component';
 
-import { TeamMessagingService } from './services/team-messaging.service';
+
 import { TeamMessagingIndexComponent } from './components/team-messaging/team-messaging-index/team-messaging-index.component';
 import { TeamMessagingCreateComponent } from './components/team-messaging/team-messaging-create/team-messaging-create.component';
 import { TeamMessagingDetailComponent } from './components/team-messaging/team-messaging-detail/team-messaging-detail.component';
@@ -43,19 +43,17 @@ import { TeamRemoveplayerComponent } from './components/team/team-removeplayer/t
 
 
 import { EventIndexComponent } from './components/event/event-index/event-index.component';
+import { EventCreateComponent } from './components/event/event-create/event-create.component';
+import { EventDetailComponent } from './components/event/event-detail/event-detail.component';
+import { EventEditComponent } from './components/event/event-edit/event-edit.component';
+import { EventDeleteComponent } from './components/event/event-delete/event-delete.component';
 
 
 import { AuthService } from './services/auth.service';
 import { EventService } from './services/event.service';
 import { ProfileService } from 'src/app/services/profile.service';
 import { TeamService } from './services/team-services.service';
-
-import { TeamMessagingDeleteComponent } from './components/team-messaging/team-messaging-delete/team-messaging-delete.component';
-import { EventCreateComponent } from './components/event/event-create/event-create.component';
-import { EventDetailComponent } from './components/event/event-detail/event-detail.component';
-import { EventEditComponent } from './components/event/event-edit/event-edit.component';
-import { EventDeleteComponent } from './components/event/event-delete/event-delete.component';
-
+import { TeamMessagingService } from './services/team-messaging.service';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -73,14 +71,9 @@ const routes = [
       { path: 'team/deatail/:TeamID', component: TeamDetailComponent },
       { path: 'team/update/:TeamID', component: TeamUpdateComponent },
       { path: 'team/delete/:TeamID', component: TeamDeleteComponent },
-
       { path: 'team/userid/:UserID', component: TeamUseridComponent},
       { path: 'team/addplayer/:ProfileID', component: TeamAddplayerComponent},
       { path: 'team/removeplayer/:ProfileID', component: TeamRemoveplayerComponent},
-
-      { path: 'event', component: EventIndexComponent },
-
-      { path: 'team/:UserID', component: TeamUseridComponent},
     
       { path: 'event', component: EventIndexComponent },
       { path: 'event/create', component: EventCreateComponent },
@@ -128,7 +121,6 @@ const routes = [
     EventDetailComponent,
     EventEditComponent,
     EventDeleteComponent,
-    //GetProfileByTeamComponent,
 
   ],
   imports: [
