@@ -26,6 +26,7 @@ import { TeamDetailComponent } from './components/team/team-detail/team-detail.c
 import { TeamDeleteComponent } from './components/team/team-delete/team-delete.component';
 import { TeamIndexComponent } from './components/team/team-index/team-index.component';
 import { TeamUpdateComponent } from './components/team/team-update/team-update.component';
+import { TeamUseridComponent } from './components/team/team-userid/team-userid.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -62,7 +63,8 @@ const routes = [
     TeamDetailComponent,
     TeamDeleteComponent,
     TeamIndexComponent,
-    TeamUpdateComponent
+    TeamUpdateComponent,
+    TeamUseridComponent
   ],
   imports: [
     BrowserModule,

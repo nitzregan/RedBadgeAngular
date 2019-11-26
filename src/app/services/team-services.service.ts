@@ -13,7 +13,11 @@ export class TeamService {
   constructor(private http: HttpClient) { }
 
   getTeamByID(TeamID) {
-    return this.http.get(`${Api_Url}/api/TeamMessaging?TeamId=${TeamID}`, { headers: this.getHeaders() });
+    return this.http.get(`${Api_Url}/api/Team?TeamId=${TeamID}`, { headers: this.getHeaders() });
+  }
+
+  getTeamsByUserID(UserID) {
+    return this.http.get(`${Api_Url}/api/TeamsByUser?UserID=${UserID}`, { headers: this.getHeaders() });
   }
 
   createTeam(team: Team, ProfileID) {
