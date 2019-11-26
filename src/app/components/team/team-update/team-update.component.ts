@@ -32,6 +32,7 @@ export class TeamUpdateComponent implements OnInit {
       TeamID: new FormControl(this.team.TeamID),
       TeamName: new FormControl(this.team.TeamName),
       Roster: new FormControl(this.team.Roster),
+      TeamEvents: new FormControl(this.team.TeamEvents),
     });
   }
 
@@ -40,6 +41,7 @@ export class TeamUpdateComponent implements OnInit {
       TeamID: this.editForm.value.TeamID,
       TeamName: this.editForm.value.TeamName,
       Roster: this.editForm.value.Roster,
+      TeamEvents: this.editForm.value.TeamEvents,
     };
     this.teamService.updateTeam(updatedTeam).subscribe(() =>{
       this.router.navigate(['/team']);
