@@ -23,6 +23,8 @@ export class TeamCreateComponent implements OnInit {
   createForm() {
     this.teamCreateForm = this._form.group({
       TeamName: new FormControl,
+      Roster: new FormControl,
+      
     })
   }
 

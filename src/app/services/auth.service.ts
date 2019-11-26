@@ -24,7 +24,8 @@ export class AuthService {
     const authString=
       `grant_type=password&username=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`
        return this.http.post(`${Api_Url}/token`, authString).subscribe((token: Token) => {localStorage.setItem('id_token', token.access_token);
-       this.router.navigate(['/']);
+       this.isLoggedIn.next(true);
+       this.router.navigate(['profile/:UserID']);
       });
   }
 
