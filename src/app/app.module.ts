@@ -48,6 +48,8 @@ import { EventService } from './services/event.service';
 import { ProfileService } from 'src/app/services/profile.service';
 import { TeamService } from './services/team-services.service';
 import { TeamMessagingDeleteComponent } from './components/team-messaging/team-messaging-delete/team-messaging-delete.component';
+import { TeamAddplayerComponent } from './components/team/team-addplayer/team-addplayer.component';
+import { TeamRemoveplayerComponent } from './components/team/team-removeplayer/team-removeplayer.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -67,7 +69,9 @@ const routes = [
       { path: 'team/deatail/:TeamID', component: TeamDetailComponent },
       { path: 'team/update/:TeamID', component: TeamUpdateComponent },
       { path: 'team/delete/:TeamID', component: TeamDeleteComponent },
-      { path: 'team/:UserID', component: TeamUseridComponent},
+      { path: 'team/userid/:UserID', component: TeamUseridComponent},
+      { path: 'team/addplayer/:ProfileID', component: TeamAddplayerComponent},
+      { path: 'team/removeplayer/:ProfileID', component: TeamRemoveplayerComponent},
     // ],
     // pathEvent: 'event', childrenEvent: [
       { path: 'event', component: EventIndexComponent },
@@ -108,6 +112,8 @@ const routes = [
     //ProfileDetailComponent,
     ProfileEditComponent,
     GetProfileComponent,
+    TeamAddplayerComponent,
+    TeamRemoveplayerComponent,
     //GetProfileByTeamComponent,
   ],
   imports: [

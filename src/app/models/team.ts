@@ -5,6 +5,6 @@ export interface Team {
     TeamID?: number;
     ProfileID?: number;
     TeamName: string;
-    Roster?: Array<Profile>;
+    Roster: Array<Profile>;
     // TeamEvents: Array<Events>;
 }
