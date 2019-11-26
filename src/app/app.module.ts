@@ -43,36 +43,41 @@ import { TeamUseridComponent } from './components/team/team-userid/team-userid.c
 
 import { EventIndexComponent } from './components/event/event-index/event-index.component';
 
+
 import { AuthService } from './services/auth.service';
 import { EventService } from './services/event.service';
 import { ProfileService } from 'src/app/services/profile.service';
 import { TeamService } from './services/team-services.service';
 import { TeamMessagingDeleteComponent } from './components/team-messaging/team-messaging-delete/team-messaging-delete.component';
+import { EventCreateComponent } from './components/event/event-create/event-create.component';
+import { EventDetailComponent } from './components/event/event-detail/event-detail.component';
+import { EventEditComponent } from './components/event/event-edit/event-edit.component';
+import { EventDeleteComponent } from './components/event/event-delete/event-delete.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
   {path: 'login', component: LoginComponent },
   { path: '**', component: RegistrationComponent },
-  // {
-  //   pathTeamMessages: 'teammessages', children: [
+ 
       { path : 'teammessages', component: TeamMessagingIndexComponent },
       { path: 'teammessages/create', component: TeamMessagingCreateComponent},
       { path: 'teammessages/detail/:MessageID', component: TeamMessagingDetailComponent },
       { path: 'teammessages/update/:MessageID', component: TeamMessagingUpdateComponent },
       { path: 'teammessages/delete/:MessageID', component: TeamMessagingDeleteComponent},
-  //   ],
-    // pathTeam: 'team', childrenTeam: [
+  
       { path: 'team', component: TeamIndexComponent },
       { path: 'team/create/:ProfileID', component: TeamCreateComponent },
       { path: 'team/deatail/:TeamID', component: TeamDetailComponent },
       { path: 'team/update/:TeamID', component: TeamUpdateComponent },
       { path: 'team/delete/:TeamID', component: TeamDeleteComponent },
       { path: 'team/:UserID', component: TeamUseridComponent},
-    // ],
-    // pathEvent: 'event', childrenEvent: [
+    
       { path: 'event', component: EventIndexComponent },
-    // ],
-    // pathProfile: 'profile', childrenProfile: [
+      { path: 'event/create', component: EventCreateComponent },
+      { path: 'event/detail/:EventID/:TeamID', component: EventDetailComponent },
+      { path: 'event/edit', component: EventEditComponent },
+      { path: 'event/delete/:EventID', component: EventCreateComponent },
+    
       { path: 'profile/:TeamID', component: ProfileIndexComponent},
     //   //{ path: 'profile', component: ProfileCreateComponent},
     //   //{ path: 'profile', component: ProfileDetailComponent},
@@ -80,7 +85,7 @@ const routes = [
     //   //{ path: 'profile', component: GretProfileByTeamComponent},
       { path: 'profile/:UserID', component: GetProfileComponent},
 
-    // ]
+    
 ];
 
 
@@ -108,6 +113,10 @@ const routes = [
     //ProfileDetailComponent,
     ProfileEditComponent,
     GetProfileComponent,
+    EventCreateComponent,
+    EventDetailComponent,
+    EventEditComponent,
+    EventDeleteComponent,
     //GetProfileByTeamComponent,
   ],
   imports: [
