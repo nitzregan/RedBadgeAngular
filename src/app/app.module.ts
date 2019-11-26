@@ -27,18 +27,19 @@ import { ProfileEditComponent } from './components/profile/profile-edit/profile-
 import { GetProfileComponent } from './components/profile/get-profile/get-profile.component';
 //import { GetProfileByTeamComponent } from './components/profile/get-profile-by-team/get-profile-by-team.component';
 
-import { TeamCreateComponent } from './components/team/team-create/team-create.component';
-import { TeamDetailComponent } from './components/team/team-detail/team-detail.component';
-import { TeamDeleteComponent } from './components/team/team-delete/team-delete.component';
-import { TeamIndexComponent } from './components/team/team-index/team-index.component';
-import { TeamUpdateComponent } from './components/team/team-update/team-update.component';
-
 import { TeamMessagingService } from './services/team-messaging.service';
 import { TeamMessagingIndexComponent } from './components/team-messaging/team-messaging-index/team-messaging-index.component';
 import { TeamMessagingCreateComponent } from './components/team-messaging/team-messaging-create/team-messaging-create.component';
 import { TeamMessagingDetailComponent } from './components/team-messaging/team-messaging-detail/team-messaging-detail.component';
 import { TeamMessagingUpdateComponent } from './components/team-messaging/team-messaging-update/team-messaging-update.component';
-import { TeamMessagingDeleteComponent } from './components/team-messaging/team-messaging-delete/team-messaging-delete.component';
+
+import { TeamCreateComponent } from './components/team/team-create/team-create.component';
+import { TeamDetailComponent } from './components/team/team-detail/team-detail.component';
+import { TeamDeleteComponent } from './components/team/team-delete/team-delete.component';
+import { TeamIndexComponent } from './components/team/team-index/team-index.component';
+import { TeamUpdateComponent } from './components/team/team-update/team-update.component';
+import { TeamUseridComponent } from './components/team/team-userid/team-userid.component';
+
 
 import { EventIndexComponent } from './components/event/event-index/event-index.component';
 
@@ -98,6 +99,7 @@ const routes = [
     TeamDeleteComponent,
     TeamIndexComponent,
     TeamUpdateComponent,
+    TeamUseridComponent
     LoginComponent,
     EventIndexComponent,
     ProfileIndexComponent,
