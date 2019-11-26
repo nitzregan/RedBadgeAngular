@@ -5,11 +5,11 @@ import { TeamService } from 'src/app/services/team-services.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-team-update',
-  templateUrl: './team-update.component.html',
-  styleUrls: ['./team-update.component.css']
+  selector: 'app-team-removeplayer',
+  templateUrl: './team-removeplayer.component.html',
+  styleUrls: ['./team-removeplayer.component.css']
 })
-export class TeamUpdateComponent implements OnInit {
+export class TeamRemoveplayerComponent implements OnInit {
 
   team: Team;
   editForm: FormGroup;
@@ -41,7 +41,7 @@ export class TeamUpdateComponent implements OnInit {
       TeamName: this.editForm.value.TeamName,
       Roster: this.editForm.value.Roster,
     };
-    this.teamService.updateTeam(updatedTeam).subscribe(() =>{
+    this.teamService.removeAthleteFromRoster(updatedTeam, this.team.ProfileID).subscribe(() =>{
       this.router.navigate(['/team']);
     });
   }

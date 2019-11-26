@@ -19,8 +19,8 @@ export class ProfileService {
     return this.http.get(`${Api_Url}/api/Profile?TeamID=${TeamID}`, {headers: this.getHeaders() });
   }
 
-  UpdateProfile(ProfileEdit) {
-    return this.http.put(`${Api_Url}/api/Profile` , {headers: this.getHeaders() });
+  UpdateProfile(profile: Profile) {
+    return this.http.put(`${Api_Url}/api/Profile`, profile, {headers: this.getHeaders() });
   }
 
   private getHeaders() {
