@@ -16,12 +16,12 @@
             <br>
             <label>Email: </label>
             <br>
-            <span *ngIf="Role==">{{Profile.Email}}</span>
+            <span *ngIf="regsiter.role != Athlete">{{Profile.Email}}</span>
             <br>
             <span></span>
             <label>Phone Number: </label>
             <br>
-            <span>{{Profile.PhoneNumber}}</span>
+            <span *ngIf="regsiter.role != Athlete">{{Profile.PhoneNumber}}</span>
             <br>
             <span></span>
             <label>Other: </label>
@@ -31,17 +31,17 @@
             <span></span>
             <label>Parent: </label>
             <br>
-            <span>{{Profle.ParentUsername}}</span>
+            <span *ngIf="regsiter.role = Athlete">{{Profle.ParentUsername}}</span>
             <br>
             <span></span>
             <label>Child: </label>
             <br>
-            <span>{{Profile.AthleteUsername}}</span>
+            <span *ngIf="regsiter.role = Parent">{{Profile.AthleteUsername}}</span>
             <br>
             <span></span>
             <label>Teams: </label>
             <br>
-            <span>{{}}</span>
+            <span *ngIf="Profile.MyTeams[]">{{Profile.MyTeams[]}}</span>
             <br>
             <span></span>
         </div>

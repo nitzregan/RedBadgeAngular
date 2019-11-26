@@ -4,6 +4,7 @@ import { Profile } from 'src/app/models/Profile';
 // import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import {MatTableDataSource} from '@angular/material';
 import {ActivatedRoute } from '@angular/router';
+import { RegisterUser } from 'src/app/models/RegisterUser';
 
 
 @Component({
@@ -14,6 +15,7 @@ import {ActivatedRoute } from '@angular/router';
 export class GetProfileComponent implements OnInit {
 
   Profile;
+  register: RegisterUser;
   columnName = [
     'ProfileID', 'FirstName', 'LastName', 'Birthday', 'Email', 'PhoneNumber', 'OtherInfo', 'AthleteUsername', 'ParentUsername', 'MyTeams', 'Comments'];
     dataSource: MatTableDataSource<Profile>;
@@ -22,7 +24,7 @@ export class GetProfileComponent implements OnInit {
   ngOnInit() {
     this._activatedRoute.paramMap.subscribe(routerData => {
       this.profileService.GetProfile(routerData.get('id')).subscribe((profile: Profile[])=>{this.dataSource = new MatTableDataSource<Profile>(profile);
-      console.log(profile);
+      console.log(profile, this.register.role );
       this.Profile=profile;
     });
 
