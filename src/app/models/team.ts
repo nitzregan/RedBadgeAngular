@@ -7,5 +7,5 @@ export interface Team {
     ProfileID?: number;
     TeamName: string;
     Roster: Array<Profile>;
-    TeamEvents: Array<Event>;
+    TeamEvents: Array<Event>; 
 }
